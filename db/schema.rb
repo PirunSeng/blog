@@ -20,6 +20,20 @@ ActiveRecord::Schema.define(version: 20180322023857) do
     t.text "text", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "published", default: false
+    t.integer "availability", default: 0
+    t.integer "age", default: 0
     t.string "author", default: ""
   end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "commenter", default: ""
+    t.text "body", default: ""
+    t.bigint "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["article_id"], name: "index_comments_on_article_id"
+  end
+
+  add_foreign_key "comments", "articles"
 end
