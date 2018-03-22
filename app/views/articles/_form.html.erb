@@ -16,7 +16,7 @@
   <% end %>
 
   <p>
-    <%= form.label :title, class: 'control-label' %><br>
+    <%= form.label :title, class: 'control-label', for: 'article_title' %><br>
     <%= form.text_field :title, class: 'form-control' %>
   </p>
 
@@ -28,6 +28,11 @@
   <p>
     <%= form.label :text, class: 'control-label' %><br>
     <%= form.text_area :text, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :author, class: 'control-label' %><br>
+    <%= form.text_area :author, class: 'form-control' %>
   </p>
 
   <p>

@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20180322025411) do
     t.boolean "published", default: false
     t.integer "availability", default: 0
     t.integer "age", default: 0
+    t.string "author", default: ""
     t.string "writer", default: ""
   end
 
